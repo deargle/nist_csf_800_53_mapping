@@ -119,8 +119,8 @@ def do_control(control):
         extended_description += processed_control_enhancement['extended_description']
 
     control_info['EXTRA'] = extra
-    control_info['info_json'] = control_info
-    control_info['extended_description'] = extended_description
+    control_info['info_json'] = json.dumps(control_info)
+    control_info['extended_description'] = json.dumps(extended_description)
     rows.append(control_info)
 
 
