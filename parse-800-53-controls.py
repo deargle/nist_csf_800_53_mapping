@@ -71,11 +71,11 @@ def do_control_enhancement(control_enhancement, family):
 
     control_enhancement_info = get_control_info(control_enhancement)
     control_enhancement_info['FAMILY'] = family
-    extended_description = control_enhancement_info['DESCRIPTION']
+    extended_description = [control_enhancement_info['DESCRIPTION']]
 
     for statement in control_enhancement.findall('ns:statement/ns:statement', ns):
         processed_statment = do_statement(statement)
-        extended_description += "\n" + processed_statment['extended_description']
+        extended_description += processed_statment['extended_description']
         statements.append(processed_statment)
 
     control_enhancement_info['STATEMENTS'] = statements
@@ -87,11 +87,11 @@ def do_statement(statement):
     """Do statement."""
     substatements = []
     statement_info = get_statement_info(statement)  # will return text
-    extended_description = f'{statement_info["NAME"]}: {statement_info["DESCRIPTION"]}'
+    extended_description = [f'{statement_info["NAME"]}: {statement_info["DESCRIPTION"]}']
 
     for substatement in statement.findall('ns:statement', ns):
         processed_statement = do_statement(substatement)
-        extended_description += "\n" + processed_statement['extended_description']
+        extended_description += processed_statement['extended_description']
         substatements.append(processed_statement)
 
     statement_info['STATEMENTS'] = substatements
@@ -103,20 +103,20 @@ def do_control(control):
     """Do control."""
     family = control.find('ns:family', ns).text.lower().title()
     control_info = get_control_info(control)
-    extended_description = control_info['DESCRIPTION']
+    extended_description = [control_info['DESCRIPTION']]
     control_info['FAMILY'] = family
 
     extra = {'STATEMENT': '', 'CONTROL_ENHANCEMENTS': []}
 
     if control.find('ns:statement/ns:statement', ns) is not None:
         processed_statement = do_statement(control.find('ns:statement/ns:statement', ns))
-        extended_description += "\n" + processed_statement['extended_description']
+        extended_description += processed_statement['extended_description']
         extra['STATEMENT'] = processed_statement
 
     for control_enhancement in control.findall('ns:control-enhancements/ns:control-enhancement', ns):
         processed_control_enhancement = do_control_enhancement(control_enhancement, family)
         extra['CONTROL_ENHANCEMENTS'].append(processed_control_enhancement)
-        extended_description += "\n" + processed_control_enhancement['extended_description']
+        extended_description += processed_control_enhancement['extended_description']
 
     control_info['EXTRA'] = extra
     control_info['info_json'] = control_info
