@@ -13,23 +13,23 @@ Requires: python, pandas
       `csf_subcategories_-_sp_800_53_mapping-detailed`
     * Run the following:
 
-        python parse_NIST_csf.py
+          python parse_NIST_csf.py
 
 2. Download the XML for the 800-53 controls.
 
-  * Download [https://nvd.nist.gov/static/feeds/xml/sp80053/rev4/800-53-controls.xml]
-  * Parse it!
+   * Download [https://nvd.nist.gov/static/feeds/xml/sp80053/rev4/800-53-controls.xml]
+   * Parse it!
 
-       python parse-800-53-controls.py
+         python parse-800-53-controls.py
 
 3. Merge the two parsed files
 
-  * Run this:
+   * Run this:
 
-      python merge_nist-csf_800-53.py
+         python merge_nist-csf_800-53.py
 
-  * The output of the last step will be a file called `data/joined-condensed.csv`,
-    which is a flat file that can be used as input to whatever.
+   * The output of the last step will be a file called `data/joined-condensed.csv`,
+     which is a flat file that can be used as input to whatever.
 
 # Links
 
