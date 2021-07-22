@@ -1,6 +1,7 @@
 title: NIST Cybersecurity Framework &#11108;&nbsp;&nbsp;800&#8209;53 Controls Mapping
 description: The NIST CSF Core maps controls from 800-53 (and other) informative
   references, but only by code, which makes text-searching impossible. Mashup!
+blog_post: https://daveeargle.com/2020/11/03/NIST-CSF-800-53-Mapping/
 
 lang: en-US
 theme: jekyll-theme-primer

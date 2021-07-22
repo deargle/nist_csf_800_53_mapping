@@ -22,10 +22,12 @@ layout: default
 <p class='meta'>11/3/2020 by <a href='https://daveeargle.com'>Dave Eargle</a></p>
 <p>Shows details and permits text-searching of the <a href='https://nvd.nist.gov/800-53/Rev4'>NIST Special Publication 800-53 (Rev. 4)</a> security and privacy controls
   <a href='https://www.nist.gov/document/csfsubcategories-sp80053mappingxlsx'>mapped</a> to the <a href='https://www.nist.gov/cyberframework'>NIST Cybersecurity Framework</a> Core.</p>
-  <p>Associated blog post <a href='https://daveeargle.com/2020/11/03/NIST-CSF-800-53-Mapping/'>here</a>.</p>
+  <p>Associated blog post <a href='{{ site.blog_post }}'>here</a>.</p>
+  <p>Github repository <a href='{{ site.github.repository_url }}'>here</a>.</p>
   <hr/>
 {::nomarkdown}
 {% raw %}
+
 <div id="app" markdown="0" v-cloak>
   <b-container fluid>
     <b-row>
