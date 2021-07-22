@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "jekyll-theme-primer";
+@import "{{ site.theme }}";
 
 [v-cloak] { display: none; }
 #app {
