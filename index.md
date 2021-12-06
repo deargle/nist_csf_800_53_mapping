@@ -170,6 +170,10 @@ layout: default
   </b-container>
 </div>
 
+<div id='loading' class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
 <!-- Start running your app -->
 <script>
 
@@ -248,6 +252,9 @@ d3.csv("https://raw.githubusercontent.com/deargle/nist_csf_800_53_mapping/master
         const filter = item => this.onlyTheseCoreFunctions.includes(item['nist_csf_function'])
         return items.filter(filter)
       }
+    },
+    created: function() {
+      document.getElementById('loading').remove()
     }
   })
 });
