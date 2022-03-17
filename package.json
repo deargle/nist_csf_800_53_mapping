@@ -1,0 +1,63 @@
+{
+  "name": "nist_csf_800_53_mapping",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Source repo for input data for [this NIST CSF <-> 800-53 Controls web tool](https://daveeargle.com/nist_csf_800_53_mapping)",
+  "author": "",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "deploy": "vue-cli-service build && gh-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "4.5.2",
+    "bootstrap-vue": "2.19.0",
+    "core-js": "^3.6.5",
+    "d3-dsv": "^3.0.1",
+    "d3-fetch": "^3.0.1",
+    "gh-pages": "^3.2.3",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-plugin-eslint": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "_id": "nist_csf_800_53_mapping@1.0.0",
+  "bugs": {
+    "url": "https://github.com/deargle/nist_csf_800_53_mapping/issues"
+  },
+  "homepage": "https://daveeargle.com/nist_csf_800_53_mapping/",
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deargle/nist_csf_800_53_mapping.git"
+  }
+}
